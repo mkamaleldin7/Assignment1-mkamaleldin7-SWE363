@@ -1,0 +1,198 @@
+/* Center section titles for Projects and Contact */
+#projects > h2,
+#contact > h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: block;
+}
+/* ====== Global Styles ====== */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, rgba(16, 35, 42, 1) 0%, rgba(48, 26, 66, 1) 52%, rgba(61, 77, 85, 1) 100%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ====== Header & Nav ====== */
+header {
+    background: #180136;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #c3a6ff;
+    text-decoration: underline;
+}
+
+/* ====== About Section ====== */
+.about-me {
+    background-color: #161616;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.about-me:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.about-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.profile-img-container,
+.profile-img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.about-text {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 1rem auto;
+    text-align: left;
+}
+
+/* ====== Projects Section ====== */
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;      /* Keep cards in one row on desktop */
+    overflow-x: auto;        /* Horizontal scroll if needed */
+    max-width: 100%;
+    padding-bottom: 10px;
+}
+
+.project {
+    flex: 0 0 300px;
+    background: #161616;
+    padding: 30px;
+    overflow: hidden;   /* ✅ ensures corners stay rounded */
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.project img {
+    width: 80px;
+    border-radius: 4px;
+}
+
+.project p {
+    margin-top: 10px;
+    text-align: center; 
+    font-size: 1rem;
+}
+
+/* ====== Contact Section ====== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+input, textarea {
+    padding: 0.85rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* ====== Footer ====== */
+footer {
+    background: #180136;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ====== Dark Mode ====== */
+[data-theme="dark"] {
+    background: #222;
+    color: #f9f9f9;
+}
+
+[data-theme="dark"] header,
+[data-theme="dark"] .about-me,
+[data-theme="dark"] .project,
+[data-theme="dark"] footer,
+[data-theme="dark"] button {
+    background: #111;
+    color: #f9f9f9;
+}
+
+/* ====== Mobile View: Stack Vertically ====== */
+@media (max-width: 900px) {
+    .projects-grid {
+        flex-direction: column;   
+        overflow-x: hidden;       /* Remove horizontal scroll */
+        overflow-y: visible;      /* No unnecessary vertical scroll limit */
+        max-height: none;         /* Let it grow naturally */
+        align-items: center;
+    }
+
+    .project {  
+        width: 90%;               /* Full width on mobile */
+        max-width: 400px;         /* Limit so it doesn’t stretch too wide */
+        flex: unset;              /* Remove the desktop flex basis */
+    }
+}
